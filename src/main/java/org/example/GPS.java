@@ -1,2 +1,5 @@
-package org.example;public interface GPS {
+package org.example;
+
+public interface GPS {
+    String getPosition();
 }
