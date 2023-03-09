@@ -25,7 +25,9 @@ public class Smartphone implements Radio, GPS{
     @Override
     public boolean stopRadio() {
 
+
         System.out.println("Radio stopped");
+        master
         return false;
     }
 
