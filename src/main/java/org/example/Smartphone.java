@@ -7,7 +7,7 @@ public class Smartphone implements Radio, GPS{
     static String position = "Köln";
     String modelName;
     String producerName;
-    public List<Contact> contactList = new ArrayList<>();
+    List<Contact> contacts;
 
     @Override
     public String getPosition() {
@@ -16,24 +16,27 @@ public class Smartphone implements Radio, GPS{
 
 
     @Override
-    public String startRadio() {
-        return "Radio started :) ";
+    public boolean startRadio() {
+        System.out.println("Radio started :) ");
+        return true;
 
     }
 
     @Override
-    public String stopRadio() {
+    public boolean stopRadio() {
 
-        return "Radio stopped  :/ ";
+        System.out.println("Radio stopped :/ ");
+        return false;
     }
 
     public Smartphone() {
     }
 
-    public Smartphone(String modelName, String producerName, List<Contact> contactList) {
+
+    public Smartphone(String modelName, String producerName, List<Contact> contacts) {
         this.modelName = modelName;
         this.producerName = producerName;
-        this.contactList = contactList;
+        this.contacts = contacts;
     }
 
     public static void setPosition(String position) {
@@ -56,12 +59,12 @@ public class Smartphone implements Radio, GPS{
         this.producerName = producerName;
     }
 
-    public List<Contact> getContactList() {
-        return contactList;
+    public List<Contact> getContacts() {
+        return contacts;
     }
 
-    public void setContactList(List<Contact> contactList) {
-        this.contactList = contactList;
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
     }
 
     @Override
@@ -69,7 +72,7 @@ public class Smartphone implements Radio, GPS{
         return "Smartphone{" +
                 "modelName='" + modelName + '\'' +
                 ", producerName='" + producerName + '\'' +
-                ", contactList=" + contactList +
+                ", contacts=" + contacts +
                 '}';
     }
 }

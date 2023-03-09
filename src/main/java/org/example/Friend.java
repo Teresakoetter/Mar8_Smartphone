@@ -6,7 +6,8 @@ public class Friend extends Contact{
     public Friend() {
     }
 
-    public Friend(String telNumber) {
+    public Friend(String telNumber, String name) {
+        super(name);
         this.telNumber = telNumber;
     }
 
